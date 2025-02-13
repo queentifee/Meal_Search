@@ -10,6 +10,7 @@ const Footer = () => {
   return (
     <footer
       className="relative flex justify-center items-center mt-20 px-5 md:px-20 py-10"
+      
       style={{
         backgroundImage: `url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
         backgroundSize: "cover",
@@ -18,8 +19,9 @@ const Footer = () => {
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black opacity-70"></div>
+      <div className="relative z-10 grid grid-cols-2 gap-8 md:grid-cols-4 text-white">
 
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-white text-center w-full max-w-5xl">
+      {/* <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-white text-center w-full max-w-5xl"> */}
         {/* Sea Foods */}
         <div
           className="group flex flex-col items-center"
