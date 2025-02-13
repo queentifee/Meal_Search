@@ -89,7 +89,7 @@ function Herosearch() {
   className={`absolute inset-0 w-full flex flex-col justify-center text-white max-w-full transition-all duration-1000 px-5 ${
     images[currentIndex].position === "left" ? "items-start ml-14" :
     images[currentIndex].position === "center" ? "items-center mx-auto text-center" :
-    images[currentIndex].position === "right" ? "items-end mr-14" : ""
+    images[currentIndex].position === "right" ? " items-end mr-14 hidden md:flex" : ""
   }`}
 >
         <h1 className="bebas-neue-word text-5xl font-bold">Spice up</h1>
@@ -100,8 +100,9 @@ function Herosearch() {
       </motion.div>
     
       {/* Second Navbar (Bottom of Hero Image) */}
-<nav className="absolute bottom-9 left-15 w-[90%] mx-auto bg-black/40 shadow-md rounded-lg px-6 py-4">
-  <div className="container mx-auto flex justify-between text-white ">
+<nav className="hidden md:block absolute bottom-9 left-1/2 transform -translate-x-1/2 w-[70%] bg-black/40 shadow-md rounded-lg px-6 py-4">
+      <div className="container mx-auto flex justify-between text-white">
+      
       
     {/* Section 1 */}
     <div className="group">
