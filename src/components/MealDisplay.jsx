@@ -1,7 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { X } from "lucide-react"; // Close button icon
 
 const MealDisplay = ({ selectedMeal, closeModal }) => {
+
+  useEffect(() => {
+    if (selectedMeal) {
+      document.documentElement.classList.add("overflow-hidden"); // Prevent scrolling
+    } else {
+      document.documentElement.classList.remove("overflow-hidden"); // Allow scrolling
+    }
+
+    return () => {
+      document.documentElement.classList.remove("overflow-hidden"); // Cleanup
+    };
+  }, [selectedMeal]);
     
   if (!selectedMeal) return null;
 
@@ -18,16 +30,15 @@ const MealDisplay = ({ selectedMeal, closeModal }) => {
   }
 
   return (
-    // <div className="fixed inset-0 bg-red bg-opacity-50 flex justify-center items-center z-50 p-2">
-<div className="fixed inset-0 bg-[#D1D5DB9C] backdrop-blur-[3px]">
+    <div className="fixed inset-0 bg-[#D1D5DB9C] backdrop-blur-[3px] flex justify-center items-center z-50 p-2">
 
-<div className="relative bg-white rounded-lg shadow-lg w-full max-w-2xl p-6 max-h-[90vh] overflow-y-auto">
+<div className="relative item-center justify-center bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 max-h-[95vh] overflow-y-auto">
 
       {/* <div className="bg-white rounded-lg shadow-lg max-w-lg w-full max-h-[90vh] overflow-y-auto relative p-6"> */}
       
         {/* Close Button */}
         <button
-          className="absolute top-3 right-3 text-gray-700 hover:text-red-500"
+          className="absolute top-1 right-1 bg-red-500 rounded-full text-white"
           onClick={closeModal}
         >
           <X size={24} />
